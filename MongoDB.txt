@@ -1,0 +1,12 @@
+Mongo db
+- theres is no schema
+- no constraint
+- non relational db
+- it will help us to maintain unordered items in an ordered 
+- document-oriented db
+-Table- collection - 
+
+installation 
+-- npm i mongoose
+
+The db variables are maintained globally

@@ -1,0 +1,65 @@
+1.collect the request 
+2.Validate it
+3.Use try catch for the exception
+4.So that it should print the status code
+5.access the express object from one file to another
+Perform validation in the middleware
+
+
+
+--global variables and use it using the third party packages
+ global variable declaration - process.env
+-- .env is the extension
+-- npm i dotenv
+
+importing--
+var config = require('../env')
+dotenv(config);
+
+
+---
+npm init
+create a folder
+==1.create index.js
+===create routes.js
+create another folder called config
+===create .env file, create db.config
+create user folder inside the config dolder
+===inside it create index js folder
+
+
+
+
+
+///basic things
+server start 
+import env.file
+import other main folders
+import route.js ==> pass the express variable to route.js
+connect database
+
+app.use(route.js)
+
+
+
+in route.js
+//express
+//use app variable
+//initialize all the routes
+//import all the folders/logics index.js                                                           
+
+user.controller.js -- function  (logics)
+user.modal.js -- schema   (validations)
+
+
+
+create a utils folder in which you can use some reusablee utility functions
+
+//explore
+--template engines
+===app.set()
+
+
+task
+1.render html
+2.global variable access

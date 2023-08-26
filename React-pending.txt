@@ -1,0 +1,7 @@
+contact page alignment
+- location for the theater
+- location should be rendered after the selection
+- Dates on the movie seat selection
+- if an account is already there that should not be registered again
+- give the image of the email id
+--give that images that should resemble the number of seats clicked

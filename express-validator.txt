@@ -1,0 +1,8 @@
+explore more on callbacks and async(functions of async)
+
+waterfall
+
+
+express-validation
+
+always validate in middleware

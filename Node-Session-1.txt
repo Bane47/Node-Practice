@@ -1,0 +1,26 @@
+Install postman
+create crud
+
+npm init
+
+create server -- install server 
+
+perform get request from postman
+
+Task-1~
+create node proj
+create express
+create server 
+perform get request as hello world!
+--response should be in json and the status should be in 200
+
+
+create a common root file and use it in another
+
+create a post request
+send body data and print it
+======================================================
+Event loop
+app.use
+process.env
+

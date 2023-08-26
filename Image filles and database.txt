@@ -1,0 +1,70 @@
+Accessing image files
+--using data first approach (creating classes based on the database tables)
+
+1. inside the index
+
+create an object for the database of the sql
+return the view() having the parameter of entities.tblFiles.ToList();
+
+-create an empty view
+
+--using erbGrid we can create paginations
+
+--create an object for it and work
+
+to read a file use BinaryReader
+
+[HttpPost]
+public ActionResult Index(HttpPostedFileBase postedFile){
+byte[] bytes;
+using BinaryReader br = new BinaryReader(postedFile.InputStream)){
+bytes = br.ReadBytes(postedFile.ContentLength);
+
+}
+
+dbImageFileEntities entities = new dbImageFileEntities ();
+entities,tblFiles.Add(new tblFile{
+Name = Path.GetFileName(postedFile.FileName),
+ContentType = postedFile.ContentType,
+Data = bytes
+
+
+}
+)
+entities.SaveChanges();
+return RedirectToAction("Index");
+
+)
+}
+
+
+================================
+modal->newitem->create new Entity
+
+
+create a controller 
+
+create index
+
+create an instance for the database
+create a list for the model and 
+List<ModelName> obj = databasename.Employees.Where(emp => emp.DepartmentId==deptid);
+return View();
+
+
+
+step 1 - SQL server - Employee(fk deptid) and Department 
+Step 2 - MVC - Controllers - Employee, Department
+
+Workflow - DeoartmentName -> EmployeeNAmes-> EmployeeDetails
+
+Step 3 - Department Controller - list -> DepartmentNames from department model
+
+Step 4 - Department - Index - View - DepartmentNames(<a>) - Employee(Index)
+
+Employee Controller - Index - List.Where(EmpNames based on the departmentName(deptid) chosen)
+Step 5 - Employee Controller - List(EmpNames based on the DepartmentName chosen)
+
+step 6 - Employee Controller - Details(int id);
+Employee emp = dbContext.Employees.FirstOrDefault(x=>x.EmployeeId == id);
+

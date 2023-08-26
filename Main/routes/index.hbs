@@ -1,0 +1,10 @@
+var express = require('express');
+var router = express.Router();
+
+
+{{!-- getting the home page --}}
+router.get('/',function(req,res,next){
+        res.render('index',{title:'Welcome to passport encryption'})
+})
+
+module.exports=router;

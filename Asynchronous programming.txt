@@ -1,0 +1,48 @@
+Asynchronous
+explore in knowledgehut
+--promises
+--async and await
+
+
+
+
+------
+
+export const movieReducer = (state = [], action) => {
+    switch (action.type) {
+
+        case 'movieid':
+            return [action.payload];
+        default:
+            return state;
+    }
+}
+
+
+
+
+export const { increment, decrement, reset, addMovieId } = counterSlice.actions;
+
+
+
+export default counterSlice.reducer;
+
+
+
+===============
+import { movieReducer } from "./counterSlice";
+
+    movieId:movieReducer
+
+
+
+
+
+================
+import { movieReducer } from "../ReduxToolKit/counterSlice";
+  const movieName = useSelector(movieReducer);
+  const addMovieId = (item) => ({type:'movieid',payload:item})
+
+dispatch(addMovieId(props.movieId))
+
+  console.log(movieName);

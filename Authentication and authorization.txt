@@ -1,0 +1,42 @@
+insert js library 
+call api with post api ajax call
+==========================================
+Authentication and authourization
+
+--post the authorization in the sessions only
+
+token based authentication using json web token
+
+
+
+
+
+
+
+
+import { combineReducers, configureStore, createStore } from "@reduxjs/toolkit";
+import counterSlice from "./counterSlice";
+import { arrayReducer } from "./counterSlice";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { persistStore,persistReducer } from "redux-persist";
+import storage from 'redux-persist/lib/storage' ;
+import { counterSlice2 } from "./counterSlice";
+
+
+const persistConfig = {
+    key:'root',
+    storage:AsyncStorage
+}
+
+
+const rootReducer = combineReducers({
+    counter:counterSlice,
+    details:counterSlice2,
+    array:arrayReducer,
+})
+
+const persistedReducer = persistReducer(persistConfig,counterSlice2)
+
+export const store = createStore(persistedReducer)
+export const persistor = persistStore(store);
+
