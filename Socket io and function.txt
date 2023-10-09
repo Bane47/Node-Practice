@@ -1,0 +1,13 @@
+Event loop :
+setTimeout()
+setImmediate()
+clearTimeout()
+clearImmediate()
+setInterval()
+
+Socket:
+=>It is used for the bidirectional communication
+=>Connection is done as  io.on("connection",function(socket){
+console.log("Socket connected");
+});
+

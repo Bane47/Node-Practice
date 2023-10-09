@@ -1,0 +1,5 @@
+Error handling --global
+install nodemon
+URl
+improve the validations
+Add timestamp,url,execution time and the status code.

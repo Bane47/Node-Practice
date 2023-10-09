@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Socket.IO chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      
+  var form = document.getElementById('form');
+  var input = document.getElementById('input');
 
-<head>
-<title>{{title}}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/stylesheets/bootstrap.min.css" crossorigin="anonymous">
-<link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (input.value) {
+      socket.emit('chat message', input.value);
+      input.value = '';
+    }
+  });
 
-<body>
-<div class="container">
-    <div class="container">
-        <div class="row">
-        <h3>{{ this.title }} <img src="../images/jwt.png" alt="" width="30px"></h3>
-        <hr>
-        <a href="/users" class="btn btn-warning">User Login </a>
-        <hr>
-        <p><b>From jwt.io:</b> JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and
-        self-contained way for
-        securely transmitting information between parties as a JSON object. This information can be verified and
-        trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a
-        public/private key pair using RSA or ECDSA.</p>
-        <img src="../images/process.png" alt="" width="700px">
-        <br><br>
-        <p><b>From passportjs.org:</b> Passport is authentication middleware for Node. It is designed to serve a
-        singular purpose: authenticate requests.</p>
-        </div>
-        </div>
-</div>
-</body>
+  socket.on('chat message', function(msg) {
+    var item = document.createElement('li');
+    item.textContent = msg;
+    messages.appendChild(item);
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+    </script>
+        <style>
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
+      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+      #input:focus { outline: none; }
+      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages > li { padding: 0.5rem 1rem; }
+      #messages > li:nth-child(odd) { background: #efefef; }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="on" /><button>Send</button>
+    </form>
+  </body>
 </html>

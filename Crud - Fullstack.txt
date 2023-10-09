@@ -1,0 +1,22 @@
+create 2 folders admin panel and client folder
+
+1.Login authentication -- name password email and phone.
+2.Create a jwt token and all workings in the server side.
+3.The password should be hashed and stored.
+
+
+create a simple application dashboard
+-- it should be responsive.
+-- stored the session in cookies.
+-- store the login transactions in the local storage.
+
+CRUD ops
+Phone
+get the details of the phone with 5 to 6 fields.
+
+profile updates:
+	only user name and password and phone should be editable.
+
+
+Backend implementation:
+	in the middleware do all the working
